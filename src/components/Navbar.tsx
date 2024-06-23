@@ -6,23 +6,27 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/solid";
 import { Card } from "./ui/card";
+import { ModeToggle } from "./ModeToggle";
 
 const Navbar = () => {
   return (
-    <Card className="flex justify-between items-center gap-4 px-10 py-2">
+    <Card className="flex items-center justify-between gap-4 px-10 py-2 bg-primary">
       <Logo />
 
       <Card className="flex justify-center items-center flex-[0.7]  px-4">
-        <MagnifyingGlassIcon className="h-8 w-8" />
+        <MagnifyingGlassIcon className="w-8 h-8" />
         <Input
-          className="focus:outline-none border-none px-4 focus-visible:ring-offset-0 font-semibold text-lg focus-visible:ring-0 f"
+          className="px-4 text-lg font-semibold border-none focus:outline-none focus-visible:ring-offset-0 focus-visible:ring-0 f"
           placeholder="Search Something!"
         />
       </Card>
 
-      <UserCircleIcon className="h-8 w-8 cursor-pointer" />
-
-      <ShoppingCartIcon className="h-8 w-8 cursor-pointer" />
+      <div className="flex items-center gap-4 bg-orange-600 px-4 py-2 rounded-xl drop-shadow-lg cursor-pointer">
+        <UserCircleIcon className="w-8 h-8 cursor-pointer" />
+        <label className="cursor-pointer" htmlFor="">Aditya Vishwakarma</label>
+      </div>
+      <ModeToggle />
+      <ShoppingCartIcon className="w-8 h-8 cursor-pointer" />
     </Card>
   );
 };
